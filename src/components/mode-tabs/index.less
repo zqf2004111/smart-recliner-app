@@ -1,0 +1,38 @@
+.mode-tabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #fff;
+  gap: 16px;
+}
+
+.mode-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  border-radius: 20px;
+  background: #F5F6FA;
+  transition: all 0.2s;
+}
+
+.mode-tab-active {
+  background: #0066CC;
+}
+
+.mode-tab-active .mode-tab-icon,
+.mode-tab-active .mode-tab-label {
+  color: #fff;
+}
+
+.mode-tab-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.mode-tab-label {
+  font-size: 24px;
+  color: #666;
+}

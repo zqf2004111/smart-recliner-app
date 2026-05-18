@@ -1,0 +1,88 @@
+.rgb-picker {
+  padding: 24px 32px;
+}
+
+.rgb-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.rgb-preview-icon {
+  font-size: 64px;
+  color: rgba(0,0,0,0.3);
+}
+
+.rgb-sliders {
+  margin-bottom: 24px;
+}
+
+.rgb-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rgb-label {
+  width: 32px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.rgb-range {
+  flex: 1;
+  height: 16px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rgb-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.rgb-range-r {
+  background: linear-gradient(to right, #000, #f00);
+}
+
+.rgb-range-g {
+  background: linear-gradient(to right, #000, #0f0);
+}
+
+.rgb-range-b {
+  background: linear-gradient(to right, #000, #00f);
+}
+
+.rgb-value {
+  width: 48px;
+  font-size: 24px;
+  color: #666;
+  text-align: right;
+}
+
+.rgb-presets {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.rgb-preset {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

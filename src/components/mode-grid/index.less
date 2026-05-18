@@ -1,0 +1,46 @@
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 24px 32px;
+}
+
+.mode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  border-radius: 20px;
+  background: #F5F6FA;
+  transition: all 0.2s;
+}
+
+.mode-item-active {
+  background: #0066CC;
+}
+
+.mode-item-active .mode-item-icon,
+.mode-item-active .mode-item-label {
+  color: #fff;
+}
+
+.mode-item-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 36px;
+}
+
+.mode-item-active .mode-item-icon {
+  background: rgba(255,255,255,0.2);
+}
+
+.mode-item-label {
+  font-size: 24px;
+  color: #666;
+}

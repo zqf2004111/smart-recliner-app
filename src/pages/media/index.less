@@ -1,0 +1,244 @@
+.media-page {
+  min-height: 100vh;
+  background: #F5F6FA;
+  padding-bottom: 40px;
+}
+
+.media-subtabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.media-subtab {
+  padding: 12px 48px;
+  border-radius: 32px;
+  background: #E8E8E8;
+  font-size: 28px;
+  color: #666;
+}
+
+.media-subtab-active {
+  background: #0066CC;
+  color: #fff;
+}
+
+/* Audio Section */
+.audio-section {
+  padding: 0 32px;
+}
+
+.player-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.player-info {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.player-title {
+  display: block;
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.player-subtitle {
+  font-size: 26px;
+  color: #999;
+}
+
+.player-progress {
+  margin-bottom: 24px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #E8E8E8;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0066CC;
+  border-radius: 4px;
+}
+
+.progress-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  color: #999;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.player-btn {
+  font-size: 40px;
+  color: #666;
+}
+
+.player-btn-play {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #0066CC;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+/* Vibrator */
+.vibrator-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px 32px;
+  margin-bottom: 24px;
+}
+
+.vibrator-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 28px;
+  color: #333;
+}
+
+.vibrator-icon {
+  font-size: 36px;
+}
+
+.vibrator-toggle {
+  margin-left: auto;
+  width: 96px;
+  height: 48px;
+  border-radius: 24px;
+  background: #E8E8E8;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.vibrator-toggle-on {
+  background: #0066CC;
+}
+
+.vibrator-knob {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.vibrator-toggle-on .vibrator-knob {
+  left: 50px;
+}
+
+.vibrator-intensity {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.vib-level {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #F5F6FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #666;
+}
+
+.vib-level-active {
+  background: #0066CC;
+  color: #fff;
+}
+
+/* Audio Profile */
+.audio-profile {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Audio Modes */
+.audio-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.audio-mode {
+  padding: 12px 32px;
+  border-radius: 32px;
+  background: #F5F6FA;
+  font-size: 26px;
+  color: #666;
+}
+
+.audio-mode-active {
+  background: #0066CC;
+  color: #fff;
+}
+
+/* Light Section */
+.light-section {
+  padding: 0 32px;
+}
+
+.light-modes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.light-mode {
+  padding: 32px 0;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+}
+
+.light-mode-active {
+  background: #0066CC;
+  color: #fff;
+}
