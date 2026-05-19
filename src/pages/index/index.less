@@ -1,9 +1,335 @@
 .index-page {
   min-height: 100vh;
-  background: #F5F6FA;
-  padding-bottom: 40px;
+  background: #F7F9FB;
+  padding-bottom: 180rpx;
 }
 
-.tab-content {
-  margin-top: 16px;
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 88rpx 32rpx 24rpx;
+}
+
+.device-selector {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.device-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.device-arrow {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.add-btn {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-title-row {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 0 32rpx 24rpx;
+}
+
+.back-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sofa-image-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 24rpx 0;
+}
+
+.sofa-image {
+  width: 480rpx;
+  height: 400rpx;
+}
+
+.mode-tabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.mode-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 140rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  gap: 12rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.04);
+}
+
+.mode-tab-active {
+  background: #0066CC;
+}
+
+.mode-tab-icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.mode-tab-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.mode-tab-text-active {
+  color: #fff;
+}
+
+.content-card {
+  margin: 0 32rpx 32rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.04);
+}
+
+/* Posture Tab */
+.preset-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48rpx;
+}
+
+.preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.preset-icon-wrap {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #F0F4F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-icon-wrap-active {
+  background: #0066CC;
+}
+
+.preset-icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.preset-text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.motor-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.motor-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+  width: 280rpx;
+}
+
+.motor-btn {
+  width: 100%;
+  height: 96rpx;
+  border-radius: 24rpx;
+  background: #F0F4F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motor-btn-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.motor-label {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Massage Tab */
+.massage-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 32rpx;
+}
+
+.massage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  width: 30%;
+}
+
+.massage-icon-wrap {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  background: #F0F4F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.massage-icon-wrap-active {
+  background: #0066CC;
+}
+
+.massage-icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.massage-text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.massage-text-active {
+  color: #0066CC;
+  font-weight: 600;
+}
+
+/* Heating / Ventilation Tab */
+.intensity-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 48rpx;
+}
+
+.intensity-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.intensity-icon-wrap {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  background: #F0F4F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intensity-icon-wrap-active {
+  background: #0066CC;
+}
+
+.intensity-icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.intensity-text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.intensity-text-active {
+  color: #0066CC;
+  font-weight: 600;
+}
+
+/* Timer Panel */
+.timer-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-top: 2rpx solid #f0f0f0;
+}
+
+.timer-label {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.timer-sub {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.timer-right {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.timer-countdown {
+  font-size: 28rpx;
+  color: #0066CC;
+  font-weight: 500;
+}
+
+/* Switch */
+.switch-track {
+  width: 96rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  background: #e0e0e0;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.switch-track-on {
+  background: #0066CC;
+}
+
+.switch-thumb {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 4rpx;
+  left: 4rpx;
+  transition: left 0.3s;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.15);
+}
+
+.switch-thumb-on {
+  left: 44rpx;
 }

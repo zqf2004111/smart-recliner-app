@@ -26,7 +26,9 @@ jobs:
 
       - name: Generate index.html
         run: |
-          cat > dist/index.html << 'HTMLEOF'
+          CSS_LINKS=$(ls dist/css/*.css | sed 's|dist/||' | awk '{print "<link rel=\"stylesheet\" href=\"./"$1"\">"}')
+          JS_SCRIPTS=$(ls dist/js/*.js | grep -v LICENSE | sed 's|dist/||' | awk '{print "<script src=\"./"$1"\"></script>"}')
+          cat > dist/index.html << HTMLEOF
           <!DOCTYPE html>
           <html>
           <head>
@@ -35,18 +37,11 @@ jobs:
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black">
             <title>Smart Recliner</title>
-            <link rel="stylesheet" href="./css/app.css">
-            <link rel="stylesheet" href="./css/108.css">
-            <link rel="stylesheet" href="./css/345.css">
-            <link rel="stylesheet" href="./css/434.css">
-            <link rel="stylesheet" href="./css/569.css">
-            <link rel="stylesheet" href="./css/710.css">
-            <link rel="stylesheet" href="./css/903.css">
+            $CSS_LINKS
           </head>
           <body>
             <div id="app"></div>
-            <script src="./js/219.js"></script>
-            <script src="./js/app.js"></script>
+            $JS_SCRIPTS
           </body>
           </html>
           HTMLEOF

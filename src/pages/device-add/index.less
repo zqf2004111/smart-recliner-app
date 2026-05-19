@@ -1,42 +1,68 @@
-.device-add-page {
+.add-page {
   min-height: 100vh;
-  background: #F5F6FA;
-  padding: 24px;
+  background: #F7F9FB;
+  padding: 88rpx 32rpx 48rpx;
 }
 
-.add-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
+.add-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 48rpx;
 }
 
-.add-model-card {
+.add-close {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-card {
+  background: #fff;
+  border-radius: 32rpx;
+  padding: 48rpx 32rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.04);
+}
+
+.sofa-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 48rpx;
+  margin-bottom: 48rpx;
+}
+
+.sofa-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
-  background: #fff;
-  border-radius: 20px;
+  gap: 16rpx;
+  width: 45%;
 }
 
-.add-model-img {
-  width: 200px;
-  height: 140px;
-  margin-bottom: 16px;
+.sofa-img {
+  width: 200rpx;
+  height: 160rpx;
 }
 
-.add-model-name {
-  font-size: 26px;
+.sofa-name {
+  font-size: 26rpx;
   color: #333;
-  text-align: center;
 }
 
-.add-action-btn {
-  padding: 28px;
-  border-radius: 16px;
+.add-device-btn {
+  width: 100%;
+  height: 96rpx;
+  border-radius: 48rpx;
   background: #0066CC;
-  text-align: center;
-  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-device-text {
+  font-size: 32rpx;
   color: #fff;
+  font-weight: 600;
 }

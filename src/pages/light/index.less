@@ -1,0 +1,122 @@
+.light-page {
+  min-height: 100vh;
+  background: #F7F9FB;
+  padding-bottom: 180rpx;
+}
+
+.rgb-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 0 48rpx;
+}
+
+.rgb-ring {
+  width: 520rpx;
+  height: 520rpx;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ff0000, #ff7f00, #ffff00, #00ff00,
+    #00ffff, #0000ff, #7f00ff, #ff00ff, #ff0000
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8rpx 40rpx rgba(0,0,0,0.12);
+}
+
+.rgb-inner {
+  width: 360rpx;
+  height: 360rpx;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.power-btn {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #0066CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.power-icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.effects-card {
+  margin: 0 32rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.04);
+}
+
+.effects-header {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 8rpx;
+}
+
+.effects-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.effects-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.effects-desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 32rpx;
+  padding-left: 56rpx;
+}
+
+.effects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24rpx;
+}
+
+.effect-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+  width: 47%;
+  padding: 32rpx 0;
+  border-radius: 24rpx;
+  background: #F7F9FB;
+}
+
+.effect-item-active {
+  background: #0066CC;
+}
+
+.effect-icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.effect-text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.effect-text-active {
+  color: #fff;
+}

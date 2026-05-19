@@ -73,12 +73,44 @@ export interface DeviceInfo {
   fwVersion: string
 }
 
+/** 广播数据解析后的设备能力配置 */
+export interface DeviceCapability {
+  sofaType: number // 0x01单人 0x02双人 0x03三人
+  seatMotor: number // 0无 1常规有刷 2霍尔有刷 3无刷
+  headMotor: number
+  lumbarMotor: number
+  backMotor: number
+  liftMotor: number
+  heating: {
+    armrest: boolean
+    back: boolean
+    shoulder: boolean
+    waist: boolean
+    leg: boolean
+    seat: boolean
+  }
+  ventilation: {
+    back: boolean
+    seat: boolean
+  }
+  massageType: number // 0无 1条形气囊(a) 2八点气囊(b) 3揉捏气囊(c)
+  hasWaist: boolean
+  hasLight: boolean
+  hasVibrator: boolean
+  hasAudio: boolean
+  customerLevel: number
+  version: string
+}
+
 export interface SofaState {
   // Connection
   connected: boolean
   connecting: boolean
   currentDevice: DeviceInfo | null
   deviceList: DeviceInfo[]
+
+  // Device capability from broadcast
+  capability: DeviceCapability | null
 
   // Motors
   motors: MotorState[]
@@ -102,6 +134,7 @@ export interface SofaState {
   setConnecting: (v: boolean) => void
   setCurrentDevice: (d: DeviceInfo | null) => void
   setDeviceList: (list: DeviceInfo[]) => void
+  setCapability: (c: DeviceCapability | null) => void
   updateMotors: (motors: MotorState[]) => void
   updateMassage: (m: Partial<MassageState>) => void
   updateHeating: (h: Partial<HeatingState>) => void
@@ -172,11 +205,30 @@ const initialPairing: PairingState = {
   networkCountdown: 0,
 }
 
+const initialCapability: DeviceCapability = {
+  sofaType: 1,
+  seatMotor: 1,
+  headMotor: 1,
+  lumbarMotor: 0,
+  backMotor: 0,
+  liftMotor: 0,
+  heating: { armrest: false, back: false, shoulder: false, waist: false, leg: false, seat: true },
+  ventilation: { back: false, seat: true },
+  massageType: 2,
+  hasWaist: false,
+  hasLight: true,
+  hasVibrator: true,
+  hasAudio: true,
+  customerLevel: 0,
+  version: '1.0.0',
+}
+
 export const useSofaStore = create<SofaState>((set) => ({
   connected: false,
   connecting: false,
   currentDevice: null,
   deviceList: [],
+  capability: { ...initialCapability },
   motors: [],
   massage: { ...initialMassage },
   heating: { ...initialHeating },
@@ -193,6 +245,7 @@ export const useSofaStore = create<SofaState>((set) => ({
   setConnecting: (v) => set({ connecting: v }),
   setCurrentDevice: (d) => set({ currentDevice: d }),
   setDeviceList: (list) => set({ deviceList: list }),
+  setCapability: (c) => set({ capability: c }),
   updateMotors: (motors) => set({ motors }),
   updateMassage: (m) => set((s) => ({ massage: { ...s.massage, ...m } })),
   updateHeating: (h) => set((s) => ({ heating: { ...s.heating, ...h } })),
@@ -208,6 +261,8 @@ export const useSofaStore = create<SofaState>((set) => ({
     connected: false,
     connecting: false,
     currentDevice: null,
+    deviceList: [],
+    capability: null,
     motors: [],
     massage: { ...initialMassage },
     heating: { ...initialHeating },

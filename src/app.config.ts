@@ -1,36 +1,17 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
+    'pages/light/index',
     'pages/media/index',
-    'pages/profile/index',
-    'pages/device-connect/index',
-    'pages/device-add/index',
+    'pages/media-bt/index',
     'pages/settings/index',
+    'pages/personal-info/index',
+    'pages/device-scan/index',
+    'pages/device-add/index',
+    'pages/timer/index',
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'Smart Recliner',
-    navigationBarTextStyle: 'black'
+    navigationStyle: 'custom',
   },
-  tabBar: {
-    color: '#999999',
-    selectedColor: '#0066CC',
-    backgroundColor: '#ffffff',
-    borderStyle: 'white',
-    list: [
-      {
-        pagePath: 'pages/index/index',
-        text: 'HOME'
-      },
-      {
-        pagePath: 'pages/media/index',
-        text: 'MEDIA'
-      },
-      {
-        pagePath: 'pages/profile/index',
-        text: 'YOU'
-      }
-    ]
-  }
 })

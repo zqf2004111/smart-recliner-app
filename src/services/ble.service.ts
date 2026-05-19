@@ -1,10 +1,12 @@
 import Taro from '@tarojs/taro'
 import { ProtocolEncoder, CMD, MotorDirection, PresetPosition } from './protocol'
+import { parseBroadcastData } from '@/utils/broadcast'
 
 export interface BLEDevice {
   name: string
   deviceId: string
   RSSI: number
+  manufacturerData?: Uint8Array
 }
 
 export type ConnectionCallback = (connected: boolean) => void
@@ -102,18 +104,42 @@ class BLESerice {
           if (!d.name || !d.deviceId) continue
           if (deviceSet.has(d.deviceId)) continue
 
-          // 过滤沙发设备（名称包含Recliner或Smart等关键字）
+          // 过滤沙发设备（名称包含Recliner或Smart等关键字，或广播名KD-SOF/KD-BED）
           const isSofa =
-            /recliner|smart.*sofa|sofa|bed/i.test(d.name) ||
+            /recliner|smart.*sofa|sofa|bed|KD-SOF|KD-BED/i.test(d.name) ||
             (filterNames && filterNames.some((f) => d.name.includes(f)))
 
           if (!isSofa) continue
+
+          // 解析广播数据中的制造商自定义数据
+          let manufacturerData: Uint8Array | undefined
+          try {
+            if ((d as any).advertisData) {
+              const adData = new Uint8Array((d as any).advertisData)
+              // 查找Manufacturer Specific Data (type 0xFF)
+              let idx = 0
+              while (idx < adData.length) {
+                const len = adData[idx]
+                const type = adData[idx + 1]
+                if (len === 0 || idx + len + 1 > adData.length) break
+                if (type === 0xFF && len >= 17) {
+                  // 跳过2字节公司ID，取16字节自定义数据
+                  manufacturerData = adData.slice(idx + 4, idx + 4 + 16)
+                  break
+                }
+                idx += len + 1
+              }
+            }
+          } catch (e) {
+            console.warn('[BLE] Parse advertisData error:', e)
+          }
 
           deviceSet.add(d.deviceId)
           devices.push({
             name: d.name,
             deviceId: d.deviceId,
             RSSI: d.RSSI || -100,
+            manufacturerData,
           })
         }
       })

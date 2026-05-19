@@ -1,0 +1,96 @@
+
+.scroll-container {
+        height: 100%;
+width: 100%;
+overflow: auto;
+      }
+.Pixso-frame-99_924 {
+        width: 100%;
+height: 135rpx;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-vector-99_879 {
+        width: 135rpx;
+height: 135rpx;
+background-image: url(@/assets/images/Ellipse_99_879.png);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translateX(calc(-50% + 0.0001220703125px)) translateY(calc(-50% + 0px));
+      }
+.Pixso-frame-99_925 {
+        width: 56rpx;
+height: 69rpx;
+position: absolute;
+left: 50%;
+top: 15rpx;
+transform: translateX(calc(-50% + 0.5001220703125px));
+display: flex;
+flex-direction: column;
+align-items: center;
+      }
+.frame-content-99_925 {
+        display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-frame-99_926 {
+        width: 62rpx;
+height: 56rpx;
+position: relative;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+      }
+.frame-content-99_926 {
+        display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 8rpx 0px;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-frame-99_927 {
+        width: 63rpx;
+height: 83rpx;
+position: relative;
+flex-shrink: 0;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+      }
+.frame-content-99_927 {
+        display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-paragraph-99_928 {
+        font-size: 62rpx;
+font-family: "Material Symbols Outlined-Regular";
+font-weight: 400;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+letter-spacing: -0.3199999928474426px;
+line-height: 77rpx;
+color: rgba(1, 89, 188, 1);
+width: 63rpx;
+height: 62rpx;
+position: relative;
+flex-shrink: 0;
+      }
+
