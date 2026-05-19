@@ -27,7 +27,7 @@ jobs:
       - name: Install Capacitor
         run: |
           npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init sofa-app com.sofa.app --web-dir dist --npm-client npm
+          npx cap init sofa-app com.sofa.app --web-dir dist
 
       - name: Add Android platform
         run: npx cap add android
