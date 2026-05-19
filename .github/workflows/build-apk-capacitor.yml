@@ -74,6 +74,16 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x android/gradlew
 
+      - name: Fix Kotlin dependency conflicts
+        run: |
+          sed -i 's/kotlin-stdlib-jdk7/kotlin-stdlib/g' android/app/build.gradle
+          sed -i 's/kotlin-stdlib-jdk8/kotlin-stdlib/g' android/app/build.gradle
+          echo ""
+          echo "configurations.all {" >> android/app/build.gradle
+          echo "    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'" >> android/app/build.gradle
+          echo "    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'" >> android/app/build.gradle
+          echo "}" >> android/app/build.gradle
+
       - name: Build Debug APK
         working-directory: ./android
         run: ./gradlew assembleDebug
